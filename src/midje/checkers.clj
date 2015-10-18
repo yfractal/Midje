@@ -16,7 +16,8 @@
                        [midje.checking.checkers.chatty
                           chatty-checker]
                        [midje.checking.checkers.simple
-                          truthy falsey TRUTHY FALSEY anything irrelevant exactly throws roughly]
+                          truthy falsey TRUTHY FALSEY anything irrelevant exactly throws]
+                       [midje.checking.checkers.roughly roughly]
                        [midje.checking.checkers.combining
                           every-checker some-checker]
                        [midje.checking.checkers.collection
