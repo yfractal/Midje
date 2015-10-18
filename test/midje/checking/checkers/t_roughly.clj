@@ -39,3 +39,15 @@
   (fact "non-numbers produces a falsey result"
     ((roughly 12) nil) => false
     ((roughly 12) "ba") => false))
+
+(facts
+ (fact "roughly for collection"
+   '(1 2) => (roughly '(1.5 2.5) 1)
+   '(1 2) =not=> (roughly '(1.5 2) 0.4)
+   [1 2] => (roughly [1.2 2.5] 1)
+   [1 2] =not=> (roughly [1.5 2] 0.4))
+ (fact "roughly for different length collection"
+   (list 1) =not=> (roughly (list 1 2) 1))
+ (fact "roughly for recursive collection"
+   (list 1 (list 2)) => (roughly (list 1.5 (list 2.5)) 1)
+   (list 1 (list 2)) =not=> (roughly (list 1.5 (list 2.5)) 0.4)))
